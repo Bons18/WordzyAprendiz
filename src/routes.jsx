@@ -1,7 +1,7 @@
 import Feedback from "./features/Feedback/pages/Feedback"
 import Ranking from "./features/Ranking/pages/Ranking"
-import Dashboard from "./features/Dashboard/pages/Inicio";
 import LoginPage from "./features/Auth/pages/LoginPage"
+import Home from "./features/Dashboard/pages/Inicio";
 
 // Definición de rutas
 const routes = [
@@ -15,7 +15,7 @@ const routes = [
   },
   {
     path: "/Inicio",
-    element: <Dashboard />,
+    element: <Home />,
   },
   {
     path: "/Ranking",
