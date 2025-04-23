@@ -12,7 +12,6 @@ import {
   Building2,
   BadgeCheck,
   Sparkles,
-  Lightbulb,
   Gem,
   Diamond,
   Hexagon,
@@ -21,6 +20,8 @@ import {
   Target,
   TrendingUp,
   Trophy,
+  Medal,
+  Crown,
 } from "lucide-react"
 
 const Ranking = () => {
@@ -121,37 +122,37 @@ const Ranking = () => {
     },
     programa: {
       podium: [
-        { position: 2, name: "Equipo Innovación", points: 845 },
-        { position: 1, name: "Equipo Desarrollo", points: 1024 },
-        { position: 3, name: "Equipo Diseño", points: 780 },
+        { position: 2, name: "Alejandro G.", points: 845 },
+        { position: 1, name: "Carolina M.", points: 1024 },
+        { position: 3, name: "Santiago R.", points: 780 },
       ],
       currentUser: {
         position: 4,
-        name: "Equipo Desarrollo",
+        name: "Carolina M.",
         points: 1024,
         ficha: "2889927-801",
       },
       ranking: [
-        { id: 1, name: "Equipo Desarrollo", points: 1024, ficha: "2889927-801" },
-        { id: 2, name: "Equipo Innovación", points: 845, ficha: "2889927-801" },
-        { id: 3, name: "Equipo Diseño", points: 780, ficha: "2889927-801" },
-        { id: 4, name: "Equipo Marketing", points: 720, ficha: "2889927-801" },
-        { id: 5, name: "Equipo Ventas", points: 650, ficha: "2889927-801" },
-        { id: 6, name: "Equipo Soporte", points: 580, ficha: "2889927-801" },
-        { id: 7, name: "Equipo Logística", points: 520, ficha: "2889927-801" },
-        { id: 8, name: "Equipo Finanzas", points: 490, ficha: "2889927-801" },
-        { id: 9, name: "Equipo RRHH", points: 450, ficha: "2889927-801" },
-        { id: 10, name: "Equipo Legal", points: 420, ficha: "2889927-801" },
-        { id: 11, name: "Equipo Calidad", points: 380, ficha: "2889927-801" },
-        { id: 12, name: "Equipo Investigación", points: 375, ficha: "2889927-801" },
-        { id: 13, name: "Equipo Producto", points: 370, ficha: "2889927-801" },
-        { id: 14, name: "Equipo Operaciones", points: 365, ficha: "2889927-801" },
-        { id: 15, name: "Equipo Comunicación", points: 360, ficha: "2889927-801" },
-        { id: 16, name: "Equipo Estrategia", points: 355, ficha: "2889927-801" },
-        { id: 17, name: "Equipo Contenido", points: 350, ficha: "2889927-801" },
-        { id: 18, name: "Equipo Análisis", points: 345, ficha: "2889927-801" },
-        { id: 19, name: "Equipo Seguridad", points: 340, ficha: "2889927-801" },
-        { id: 20, name: "Equipo Infraestructura", points: 335, ficha: "2889927-801" },
+        { id: 1, name: "Carolina M.", points: 1024, ficha: "2889927-801" },
+        { id: 2, name: "Alejandro G.", points: 845, ficha: "2889927-801" },
+        { id: 3, name: "Santiago R.", points: 780, ficha: "2889927-801" },
+        { id: 4, name: "Valentina T.", points: 720, ficha: "2889927-801" },
+        { id: 5, name: "Mateo L.", points: 650, ficha: "2889927-801" },
+        { id: 6, name: "Isabella S.", points: 580, ficha: "2889927-801" },
+        { id: 7, name: "Sebastián V.", points: 520, ficha: "2889927-801" },
+        { id: 8, name: "Camila F.", points: 490, ficha: "2889927-801" },
+        { id: 9, name: "Nicolás H.", points: 450, ficha: "2889927-801" },
+        { id: 10, name: "Mariana L.", points: 420, ficha: "2889927-801" },
+        { id: 11, name: "Daniel C.", points: 380, ficha: "2889927-801" },
+        { id: 12, name: "Luciana I.", points: 375, ficha: "2889927-801" },
+        { id: 13, name: "Emilio P.", points: 370, ficha: "2889927-801" },
+        { id: 14, name: "Antonella O.", points: 365, ficha: "2889927-801" },
+        { id: 15, name: "Joaquín E.", points: 360, ficha: "2889927-801" },
+        { id: 16, name: "Renata A.", points: 355, ficha: "2889927-801" },
+        { id: 17, name: "Benjamín C.", points: 350, ficha: "2889927-801" },
+        { id: 18, name: "Martina D.", points: 345, ficha: "2889927-801" },
+        { id: 19, name: "Felipe S.", points: 340, ficha: "2889927-801" },
+        { id: 20, name: "Victoria I.", points: 335, ficha: "2889927-801" },
       ],
     },
   }
@@ -332,56 +333,83 @@ const Ranking = () => {
           Tabla de clasificación
         </h1>
 
-        {/* Podio */}
-        <div className="flex justify-center items-end mb-12 relative">
-          {/* Segundo lugar */}
-          <div className="flex flex-col items-center mx-4">
-            <div
-              className={`w-14 h-14 ${getPodiumBgColor(2)} rounded-full flex items-center justify-center mb-2 border-2 border-white shadow-md`}
-            >
-              <Lightbulb className="w-6 h-6 text-white" />
-            </div>
-            <p className="text-sm font-medium">{currentData.podium[0].name}</p>
-            <p className="text-sm font-medium">{currentData.podium[0].points} puntos</p>
-            <div className="h-24 w-16 bg-gray-200 mt-3 flex items-center justify-center rounded-t-md shadow-md">
-              {getPodiumIcon(activeTab, 2)}
-            </div>
-          </div>
+        {/* Nuevo diseño del podio */}
+        <div className="mb-12 relative">
+          <div className="flex justify-center items-end">
+            {/* Tarjetas de podio con diseño moderno */}
+            <div className="grid grid-cols-3 gap-4 w-full max-w-2xl">
+              {/* Segundo lugar */}
+              <div className="flex flex-col items-center">
+                <div className="relative mb-2">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gray-200 rounded-full w-6 h-6 flex items-center justify-center shadow-md">
+                      <span className="text-gray-700 text-xs font-bold">2</span>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg p-4 pt-5 shadow-md">
+                    <div className="flex flex-col items-center">
+                      <div className="w-16 h-16 bg-gray-100 rounded-full mb-3 flex items-center justify-center border-2 border-white shadow-sm overflow-hidden">
+                        <GraduationCap className="w-8 h-8 text-gray-500" />
+                      </div>
+                      <h3 className="font-medium text-gray-800 text-center">{currentData.podium[0].name}</h3>
+                      <div className="flex items-center mt-1">
+                        <Medal className="w-4 h-4 text-gray-500 mr-1" />
+                        <span className="text-gray-700 font-semibold">{currentData.podium[0].points} pts</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-          {/* Primer lugar */}
-          <div className="flex flex-col items-center mx-4 -mt-6">
-            <div className="absolute -top-2">
-              <Sparkles className="w-8 h-8 text-yellow-500" />
-            </div>
-            <div
-              className={`w-16 h-16 ${getPodiumBgColor(1)} rounded-full flex items-center justify-center mb-2 mt-4 border-2 border-white shadow-md`}
-            >
-              <Trophy className="w-8 h-8 text-white" />
-            </div>
-            <p className="text-sm font-medium">{currentData.podium[1].name}</p>
-            <p className="text-sm font-medium">{currentData.podium[1].points} puntos</p>
-            <div className="h-32 w-16 bg-[#1f384c] mt-3 flex items-center justify-center rounded-t-md shadow-md">
-              {getPodiumIcon(activeTab, 1)}
-            </div>
-          </div>
+              {/* Primer lugar */}
+              <div className="flex flex-col items-center -mt-6">
+                <div className="relative mb-2">
+                  <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
+                    <Crown className="w-8 h-8 text-yellow-500 drop-shadow-md" />
+                  </div>
+                  <div className="bg-gradient-to-br from-blue-600 to-[#1f384c] rounded-lg p-4 pt-6 shadow-lg">
+                    <div className="flex flex-col items-center">
+                      <div className="w-20 h-20 bg-blue-500 rounded-full mb-3 flex items-center justify-center border-4 border-white shadow-md overflow-hidden">
+                        <Trophy className="w-10 h-10 text-white" />
+                      </div>
+                      <h3 className="font-bold text-white text-center">{currentData.podium[1].name}</h3>
+                      <div className="flex items-center mt-1">
+                        <Sparkles className="w-4 h-4 text-yellow-300 mr-1" />
+                        <span className="text-white font-semibold">{currentData.podium[1].points} pts</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-          {/* Tercer lugar */}
-          <div className="flex flex-col items-center mx-4">
-            <div
-              className={`w-14 h-14 ${getPodiumBgColor(3)} rounded-full flex items-center justify-center mb-2 border-2 border-white shadow-md`}
-            >
-              <Zap className="w-6 h-6 text-white" />
-            </div>
-            <p className="text-sm font-medium">{currentData.podium[2].name}</p>
-            <p className="text-sm font-medium">{currentData.podium[2].points} puntos</p>
-            <div className="h-16 w-16 bg-gray-200 mt-3 flex items-center justify-center rounded-t-md shadow-md">
-              {getPodiumIcon(activeTab, 3)}
+              {/* Tercer lugar */}
+              <div className="flex flex-col items-center">
+                <div className="relative mb-2">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-amber-600 rounded-full w-6 h-6 flex items-center justify-center shadow-md">
+                      <span className="text-white text-xs font-bold">3</span>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-amber-100 to-amber-200 rounded-lg p-4 pt-5 shadow-md">
+                    <div className="flex flex-col items-center">
+                      <div className="w-16 h-16 bg-amber-50 rounded-full mb-3 flex items-center justify-center border-2 border-white shadow-sm overflow-hidden">
+                        <GraduationCap className="w-8 h-8 text-amber-600" />
+                      </div>
+                      <h3 className="font-medium text-gray-800 text-center">{currentData.podium[2].name}</h3>
+                      <div className="flex items-center mt-1">
+                        <Medal className="w-4 h-4 text-amber-600 mr-1" />
+                        <span className="text-gray-700 font-semibold">{currentData.podium[2].points} pts</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Tu posición */}
-        <div className="border rounded-lg p-4 mb-6 flex items-center shadow-sm hover:shadow-md transition-shadow">
+        <div className="border rounded-lg p-4 mb-6 flex items-center shadow-sm hover:shadow-md transition-shadow bg-gradient-to-r from-blue-50 to-white">
           <div className="w-10 h-10 bg-[#1f384c] rounded-full flex items-center justify-center mr-4 shadow-sm">
             <span className="text-white font-medium">{currentData.currentUser.position}</span>
           </div>
@@ -389,7 +417,7 @@ const Ranking = () => {
             <p className="font-medium text-[#1f384c]">{currentData.currentUser.name}</p>
             <p className="text-sm text-gray-600">Ficha: {currentData.currentUser.ficha}</p>
           </div>
-          <div className="font-semibold text-[#1f384c] flex items-center">
+          <div className="font-semibold text-[#1f384c] flex items-center bg-blue-100 px-3 py-1 rounded-full">
             <Sparkles className="w-5 h-5 text-yellow-500 mr-1" />
             {currentData.currentUser.points} Puntos
           </div>
@@ -423,29 +451,45 @@ const Ranking = () => {
         </div>
 
         {/* Lista de ranking */}
-        <div className="space-y-4 mb-6">
+        <div className="space-y-3 mb-6">
           {displayedItems.map((user) => (
             <div
               key={user.id}
-              className={`border rounded-lg p-4 flex items-center ${
-                user.id === 1 ? "bg-[#e8def8]" : "bg-white"
+              className={`rounded-lg p-4 flex items-center ${
+                user.id === 1
+                  ? "bg-gradient-to-r from-blue-600 to-[#1f384c] text-white shadow-md"
+                  : user.id === 2
+                    ? "bg-gradient-to-r from-gray-200 to-gray-300 shadow-sm"
+                    : user.id === 3
+                      ? "bg-gradient-to-r from-amber-100 to-amber-200 shadow-sm"
+                      : "bg-white border shadow-sm"
               } hover:shadow-md transition-shadow`}
             >
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center mr-4 ${
-                  user.id <= 3 ? getPodiumBgColor(user.id) : "bg-gray-100"
-                }`}
+                  user.id === 1
+                    ? "bg-blue-500 text-white"
+                    : user.id === 2
+                      ? "bg-gray-100 text-gray-700"
+                      : user.id === 3
+                        ? "bg-amber-50 text-amber-700"
+                        : "bg-gray-100 text-gray-700"
+                } border-2 border-white`}
               >
-                <span className={`text-sm font-medium ${user.id <= 3 ? "text-white" : "text-gray-700"}`}>
-                  {user.id}
-                </span>
+                <span className="text-sm font-medium">{user.id}</span>
               </div>
               <div className="flex-1">
-                <p className="font-medium text-[#1f384c]">{user.name}</p>
-                <p className="text-sm text-gray-600">Ficha: {user.ficha}</p>
+                <p className={`font-medium ${user.id === 1 ? "text-white" : "text-[#1f384c]"}`}>{user.name}</p>
+                <p className={`text-sm ${user.id === 1 ? "text-blue-200" : "text-gray-600"}`}>Ficha: {user.ficha}</p>
               </div>
-              <div className="font-semibold text-[#1f384c] flex items-center">
-                {user.id <= 3 && <span className="mr-2">{getPositionIcon(user.id)}</span>}
+              <div className={`font-semibold flex items-center ${user.id === 1 ? "text-white" : "text-[#1f384c]"}`}>
+                {user.id <= 3 && (
+                  <span className="mr-2">
+                    {user.id === 1 && <Crown className="w-5 h-5 text-yellow-300" />}
+                    {user.id === 2 && <Medal className="w-5 h-5 text-gray-400" />}
+                    {user.id === 3 && <Medal className="w-5 h-5 text-amber-600" />}
+                  </span>
+                )}
                 {user.points} Puntos
               </div>
             </div>
