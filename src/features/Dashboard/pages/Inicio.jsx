@@ -153,7 +153,17 @@ const Home = () => {
                           <FileText size={16} className="mr-2" />
                           <p className="text-sm">Material de apoyo: Beginners guide to english pronunciation</p>
                         </div>
-                        <button className="bg-white border border-[#1f384c] rounded-md px-3 py-1 text-xs hover:bg-[#1f384c] hover:text-white transition-colors duration-300" >
+                        <button
+                          onClick={() => {
+                            const link = document.createElement("a")
+                            link.href = "/src/shared/prueba.docx"
+                            link.download = "prueba.docx"
+                            document.body.appendChild(link)
+                            link.click()
+                            document.body.removeChild(link)
+                          }}
+                          className="bg-white border border-[#1f384c] rounded-md px-3 py-1 text-xs hover:bg-[#1f384c] hover:text-white transition-colors duration-300"
+                        >
                           Ver material
                         </button>
                       </div>
@@ -167,6 +177,7 @@ const Home = () => {
                             <span className={`ml-2 text-xs font-medium ${getScoreColor(85)}`}>85/100</span>
                           </div>
                           <button
+                            onClick={() => handleStartExam("Canon Listening")}
                             className={`${getButtonColor(85)} rounded-md px-3 py-1 text-xs transition-colors duration-300`}
                           >
                             Repetir
@@ -179,6 +190,7 @@ const Home = () => {
                             <span className={`ml-2 text-xs font-medium ${getScoreColor(92)}`}>92/100</span>
                           </div>
                           <button
+                            onClick={() => handleStartExam("Introducing yourself")}
                             className={`${getButtonColor(92)} rounded-md px-3 py-1 text-xs transition-colors duration-300`}
                           >
                             Repetir
@@ -191,6 +203,7 @@ const Home = () => {
                             <span className={`ml-2 text-xs font-medium ${getScoreColor(65)}`}>65/100</span>
                           </div>
                           <button
+                            onClick={() => handleStartExam("Support phrases")}
                             className={`${getButtonColor(65)} rounded-md px-3 py-1 text-xs transition-colors duration-300`}
                           >
                             Repetir
@@ -203,6 +216,7 @@ const Home = () => {
                             <span className={`ml-2 text-xs font-medium ${getScoreColor(78)}`}>78/100</span>
                           </div>
                           <button
+                            onClick={() => handleStartExam("Greeting & Introductions")}
                             className={`${getButtonColor(78)} rounded-md px-3 py-1 text-xs transition-colors duration-300`}
                           >
                             Repetir
@@ -218,6 +232,7 @@ const Home = () => {
                           <span className={`ml-2 text-xs font-medium ${getScoreColor(88)}`}>88/100</span>
                         </div>
                         <button
+                          onClick={() => handleStartExam("Greeting & Introductions")}
                           className={`${getButtonColor(88)} rounded-md px-3 py-1 text-xs transition-colors duration-300`}
                         >
                           Repetir
@@ -252,7 +267,17 @@ const Home = () => {
                           <FileText size={16} className="mr-2" />
                           <p className="text-sm">Material de apoyo: Simple Present</p>
                         </div>
-                        <button className="bg-white border border-[#1f384c] rounded-md px-3 py-1 text-xs hover:bg-[#1f384c] hover:text-white transition-colors duration-300">
+                        <button
+                          onClick={() => {
+                            const link = document.createElement("a")
+                            link.href = "/src/shared/prueba.docx"
+                            link.download = "prueba.docx"
+                            document.body.appendChild(link)
+                            link.click()
+                            document.body.removeChild(link)
+                          }}
+                          className="bg-white border border-[#1f384c] rounded-md px-3 py-1 text-xs hover:bg-[#1f384c] hover:text-white transition-colors duration-300"
+                        >
                           Ver material
                         </button>
                       </div>
@@ -266,6 +291,7 @@ const Home = () => {
                             <span className={`ml-2 text-xs font-medium ${getScoreColor(75)}`}>75/100</span>
                           </div>
                           <button
+                            onClick={() => handleStartExam("Canon Listening")}
                             className={`${getButtonColor(75)} rounded-md px-3 py-1 text-xs transition-colors duration-300`}
                           >
                             Repetir
@@ -278,6 +304,7 @@ const Home = () => {
                             <span className={`ml-2 text-xs font-medium ${getScoreColor(82)}`}>82/100</span>
                           </div>
                           <button
+                            onClick={() => handleStartExam("Introducing yourself")}
                             className={`${getButtonColor(82)} rounded-md px-3 py-1 text-xs transition-colors duration-300`}
                           >
                             Repetir
@@ -289,7 +316,10 @@ const Home = () => {
                             <p className="text-sm">Support phrases</p>
                             <span className="ml-2 text-xs font-medium text-gray-500">Pendiente</span>
                           </div>
-                          <button className="bg-white border border-[#1f384c] rounded-md px-3 py-1 text-xs hover:bg-[#1f384c] hover:text-white transition-colors duration-300">
+                          <button
+                            onClick={() => handleStartExam("Support phrases")}
+                            className="bg-white border border-[#1f384c] rounded-md px-3 py-1 text-xs hover:bg-[#1f384c] hover:text-white transition-colors duration-300"
+                          >
                             Comenzar
                           </button>
                         </div>
@@ -300,6 +330,7 @@ const Home = () => {
                             <span className={`ml-2 text-xs font-medium ${getScoreColor(60)}`}>60/100</span>
                           </div>
                           <button
+                            onClick={() => handleStartExam("Greeting & Introductions")}
                             className={`${getButtonColor(60)} rounded-md px-3 py-1 text-xs transition-colors duration-300`}
                           >
                             Repetir
@@ -314,7 +345,10 @@ const Home = () => {
                           <p className="text-sm">Simple Present</p>
                           <span className="ml-2 text-xs font-medium text-gray-500">Pendiente</span>
                         </div>
-                        <button className="bg-white border border-[#1f384c] rounded-md px-3 py-1 text-xs hover:bg-[#1f384c] hover:text-white transition-colors duration-300">
+                        <button
+                          onClick={() => handleStartExam("Simple Present")}
+                          className="bg-white border border-[#1f384c] rounded-md px-3 py-1 text-xs hover:bg-[#1f384c] hover:text-white transition-colors duration-300"
+                        >
                           Comenzar
                         </button>
                       </div>
@@ -377,7 +411,7 @@ const Home = () => {
       {/* Exam Modal */}
       <ExamModal isOpen={showExamModal} onClose={handleCloseExam} exam={currentExam} />
     </div>
-  ); // Added missing closing parenthesis here
+  )
 }
 
 export default Home
