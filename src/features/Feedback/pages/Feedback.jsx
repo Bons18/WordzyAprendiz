@@ -2168,11 +2168,12 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown, ChevronUp, Lock } from "react-feather"
+import { ChevronDown, ChevronUp, Lock } from "lucide-react"
 
 export default function ApprenticeFeedbackView() {
   const [expandedLevels, setExpandedLevels] = useState({ 1: true })
   const [expandedTopics, setExpandedTopics] = useState({ temas: true, greetings: true, "simple-present": true })
+  // ... rest of your component
   const [showDetailModal, setShowDetailModal] = useState(false)
   const [selectedActivity, setSelectedActivity] = useState(null)
 
