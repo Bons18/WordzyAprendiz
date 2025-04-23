@@ -159,7 +159,37 @@ const ExamModal = ({ isOpen, onClose, exam }) => {
 
   const handleGoToFeedback = () => {
     onClose()
-    navigate("/Retroalimentacion")
+    // Create an activity object with exam data to pass to the Feedback page
+    const { totalScore, maxScore } = calculateScore()
+    const scorePercentage = Math.round((totalScore / maxScore) * 100)
+    const passed = scorePercentage >= 70
+
+    const activity = {
+      id: exam.id.toString(),
+      name: exam.title,
+      type: exam.type === "exam" ? "Examen" : "Actividad",
+      score: scorePercentage,
+      completed: true,
+      feedback: passed
+        ? "¡Excelente trabajo! Has completado esta evaluación satisfactoriamente."
+        : "Necesitas mejorar en algunos aspectos. Revisa las preguntas incorrectas.",
+      questions: exam.questions.map((question, index) => ({
+        id: question.id.toString(),
+        text: question.text,
+        options: question.options,
+        correctAnswer: question.correctAnswer,
+        userAnswer: userAnswers[index],
+        score: userAnswers[index] === question.correctAnswer ? question.points : 0,
+        maxScore: question.points,
+        feedback:
+          userAnswers[index] === question.correctAnswer
+            ? "¡Correcto! Bien hecho."
+            : "Incorrecto. La respuesta correcta es: " + question.options[question.correctAnswer],
+      })),
+    }
+
+    // Navegar a la página de retroalimentación con los datos del examen
+    navigate("/Retroalimentacion", { state: { openActivity: activity } })
   }
 
   const handleAudioProgressClick = (e) => {
